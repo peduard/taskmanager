@@ -13,7 +13,7 @@
 <% @tareas.each do |tarea| %>
   <tr>
     <td><%= tarea.nombre %></td>
-    <td><%= tarea.usuario %></td>
+    <td><%= tarea.usuario.nombre %></td>
     <td><%= tarea.estado %></td>
     <td><%= link_to 'Show', tarea %></td>
     <td><%= link_to 'Edit', edit_tarea_path(tarea) %></td>
@@ -25,3 +25,5 @@
 <br />
 
 <%= link_to 'New Tarea', new_tarea_path %>
+<br />
+<%= link_to 'Usuarios', usuarios_path %>

@@ -3,6 +3,7 @@ class TareasController < ApplicationController
   # GET /tareas.json
   def index
     @tareas = Tarea.all
+    @usuarios = Usuario.all.map { |usuario| [usuario.nombre]  }
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +26,7 @@ class TareasController < ApplicationController
   # GET /tareas/new.json
   def new
     @tarea = Tarea.new
+    @usuarios = Usuario.all.map { |usuario| [usuario.nombre, usuario.id]  }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +37,14 @@ class TareasController < ApplicationController
   # GET /tareas/1/edit
   def edit
     @tarea = Tarea.find(params[:id])
+    @usuarios = Usuario.all.map { |usuario| [usuario.nombre, usuario.id]  }
   end
 
   # POST /tareas
   # POST /tareas.json
   def create
     @tarea = Tarea.new(params[:tarea])
+    @usuarios = Usuario.all.map { |usuario| [usuario.nombre, usuario.id]  }
 
     respond_to do |format|
       if @tarea.save
@@ -57,6 +61,7 @@ class TareasController < ApplicationController
   # PUT /tareas/1.json
   def update
     @tarea = Tarea.find(params[:id])
+    @usuarios = Usuario.all.map { |usuario| [usuario.nombre, usuario.id]  }
 
     respond_to do |format|
       if @tarea.update_attributes(params[:tarea])

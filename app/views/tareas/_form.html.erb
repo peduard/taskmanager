@@ -16,8 +16,8 @@
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :usuario %><br />
-    <%= f.text_field :usuario %>
+  <%= f.label :usuario_id %><br />
+    <%= f.select :usuario_id, options_for_select(@usuarios) %>
   </div>
   <div class="field">
     <%= f.label :estado %><br />
