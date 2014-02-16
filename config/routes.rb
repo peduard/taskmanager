@@ -1,4 +1,10 @@
 Taskmanager::Application.routes.draw do
+  resources :tareas
+
+
+  resources :usuarios
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
